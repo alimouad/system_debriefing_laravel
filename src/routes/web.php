@@ -14,8 +14,8 @@ Route::post('/login/submit',[AuthController::class,'submitLogin'])->name('login.
 
 Route::middleware('auth')->group(function(){
     Route::get('/admin/home',[AdminController::class,'dashboard'])->name('admin.home');
-    Route::get('/admin/users',[UserController::class,'usersHome'])->name('admin.users');
-    Route::get('/admin/skills',[SkillController::class,'skillsHome'])->name('admin.skills');
-    Route::get('/admin/sprints',[SprintController::class,'sprintsHome'])->name('admin.sprints');
-    Route::get('/admin/home',[ClassroomController::class,'classroomsHome'])->name('admin.classrooms');
+//    Route::get('/admin/users',[UserController::class,'usersHome'])->name('admin.users');
+//    Route::get('/admin/skills',[SkillController::class,'skillsHome'])->name('admin.skills');
+//    Route::get('/admin/sprints',[SprintController::class,'sprintsHome'])->name('admin.sprints');
+//    Route::get('/admin/home',[ClassroomController::class,'classroomsHome'])->name('admin.classrooms');
 });
