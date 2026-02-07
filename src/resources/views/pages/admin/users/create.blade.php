@@ -10,7 +10,7 @@
 
     <header class="flex flex-col md:flex-row md:items-center justify-between gap-6 px-4">
         <div class="flex items-center gap-8">
-            <a href="/admin/users" class="group w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-slate-400 hover:text-primary transition-all border border-slate-100 hover:shadow-xl hover:-translate-y-1">
+            <a href="{{ route('admin.users.index') }}" class="group w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-slate-400 hover:text-primary transition-all border border-slate-100 hover:shadow-xl hover:-translate-y-1">
                 <span class="material-symbols-outlined text-3xl group-hover:-translate-x-1 transition-transform">arrow_back</span>
             </a>
             <div>
@@ -23,8 +23,8 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div class="lg:col-span-8">
             <section class="bg-white/80 backdrop-blur-3xl rounded-[4rem] p-12 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.04)] border border-white ring-1 ring-black/[0.01]">
-                <form action="" method="POST" class="space-y-10">
-                    
+                <form action="{{ route('admin.users.store') }}" method="POST" class="space-y-10">
+                    @csrf
                     <div class="space-y-6">
                         <div class="flex items-center gap-3 ml-4">
                             <span class="w-1.5 h-6 pink-gradient rounded-full"></span>

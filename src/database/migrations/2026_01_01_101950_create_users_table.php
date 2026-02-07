@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('role',['ADMIN','STUDENT','TEACHER'])->default('STUDENT');
+            $table->foreignId('classroom_id')->nullable()->constrained('classrooms')->onDelete('set null');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -14,7 +14,7 @@
             @endphp
 
             {{-- Home Link --}}
-            <a href="/student/home"
+            <a href="{{ route('student.home') }}"
                 class="flex items-center justify-between group p-4 rounded-[1.5rem] transition-all duration-300 
         {{ str_contains($currentPath, '/student/home') ? 'bg-student text-white shadow-lg' : 'text-slate-400 hover:text-student hover:bg-slate-50' }}">
                 <div class="flex items-center gap-4">
@@ -29,7 +29,7 @@
 
 
             {{-- Briefs Link --}}
-            <a href="/student/briefs"
+            <a href="{{route('student.briefs')}}"
                 class="flex items-center justify-between group p-4 rounded-[1.5rem] transition-all duration-300 
         {{ str_contains($currentPath, '/student/briefs') ? 'bg-student text-white shadow-lg' : 'text-slate-400 hover:text-student hover:bg-slate-50' }}">
                 <div class="flex items-center gap-4">
@@ -56,8 +56,13 @@
         </nav>
 
         {{-- Logout --}}
-        <a href="/logout" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-slate-400 hover:text-white hover:bg-student transition-all duration-300">
-            <span class="material-symbols-outlined">logout</span>
-            <span class="text-sm font-bold">Sign Out</span>
-        </a>
+        <form method="POST" action="{{ route('logout') }}" class="ml-2 flex items-center gap-4 p-4 rounded-[1.5rem] text-rose-400 hover:bg-rose-50 transition-all group">
+            @csrf
+            <button type="submit" class="flex items-center gap-4 px-6 py-4 rounded-2xl text-slate-400 hover:text-white hover:bg-student transition-all duration-300">
+                <span class="material-symbols-outlined">logout</span>
+                <span class="text-sm font-bold">Sign Out</span>
+            </button>
+        </form>
+
+
     </aside>

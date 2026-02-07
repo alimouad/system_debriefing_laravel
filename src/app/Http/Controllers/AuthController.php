@@ -30,8 +30,9 @@ class AuthController extends Controller
 
             return match ($user->role) {
                 'ADMIN' => redirect()->route('admin.home'),
-                'STUDENT    ' => redirect()->route('home'),
-                default => redirect()->route('home'),
+                'STUDENT' => redirect()->route('student.home'),
+                'TEACHER' => redirect()->route('teacher.home'),
+                default => redirect()->route('student.home'),
             };
         }
 

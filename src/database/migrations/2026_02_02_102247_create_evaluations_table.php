@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
-            $table->text('comment');
-            $table->enum('level',['IMITATE','ADAPT','TRANSPOSE']);
+
+            $table->text('comment')->nullable();
+            $table->foreignId('teacher_id')->constrained('users')->onDelete('set null');
+            $table->foreignId('student_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('brief_id')->constrained('briefs')->onDelete('cascade');
             $table->timestamps();
         });
     }

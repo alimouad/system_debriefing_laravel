@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('classrooms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('year');
+            $table->text('promotion_year');
             $table->timestamps();
         });
     }

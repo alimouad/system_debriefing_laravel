@@ -43,7 +43,7 @@ Student -- UserRole
 class Classroom {
     - id : int
     - name : string
-    - year : string
+    - promotion_year : string
 }
 
 class Sprint {
@@ -72,7 +72,7 @@ class Skill {
     - label : string
 }
 
-class Submittion {
+class Submission {
     - id : int
     - content : text
     - submission_date : date
@@ -108,12 +108,12 @@ Brief "*" -- "*" Skill : targets >
 Teacher "*" -- "*" Classroom : supervises >
 Teacher "1" -- "*" Brief : organizes >
 Student "*" -- "1" Classroom : belongs to >
-Submittion "*" -- "1" Brief : for >
-Submittion "*" -- "1" Student : by >
+Submission "*" -- "1" Brief : for >
+Submission "*" -- "1" Student : by >
 
 Evaluation "*" -- "1" Student : concerns >
 Evaluation "*" -- "1" Brief : linked to >
-Evaluation "*" -- "1" Skill : assesses >
+Evaluation "*" -- "*" Skill : assesses >
 Evaluation "*" -- "1" Teacher : performed by >
 
 @enduml

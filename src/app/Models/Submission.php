@@ -4,16 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Evaluation extends Model
+class Submission extends Model
 {
     protected $fillable = [
-        'comment',
-        'teacher_id',
         'student_id',
         'brief_id',
-        'sprint_id',
-        'skill_id',
-        'mastery_level'
+        'repository_url',
+        'description'
     ];
 
     public function brief(){
@@ -24,10 +21,6 @@ class Evaluation extends Model
         return $this->belongsToMany(Skill::class, 'evaluation_skill');
     }
 
-    public function teacher()
-    {
-        return $this->belongsTo(User::class, 'teacher_id');
-    }
 
     public function student()
     {

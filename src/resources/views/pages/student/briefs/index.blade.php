@@ -79,7 +79,7 @@
 
             {{-- Action Button --}}
             <div class="mt-8">
-                <a href="/student/briefs/rendu?id={{ $b['id'] }}" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2 hover:bg-emerald-500 transition-all shadow-lg shadow-slate-200 hover:shadow-emerald-500/30">
+                <a href="{{ route('student.briefs.rendu', $b) }}" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2 hover:bg-emerald-500 transition-all shadow-lg shadow-slate-200 hover:shadow-emerald-500/30">
                     Add Rendu
                     <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
                 </a>

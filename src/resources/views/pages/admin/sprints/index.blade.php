@@ -9,7 +9,7 @@
     <header class="flex flex-col md:flex-row md:items-end justify-between gap-6 px-4">
         <div>
             <nav class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2">
-                <a href="/admin/dashboard" class="hover:text-primary transition-colors">Admin</a>
+                <a href="{{ route('admin.home') }}" class="hover:text-primary transition-colors">Admin</a>
                 <span class="material-symbols-outlined text-[12px]">chevron_right</span>
                 <span class="text-slate-900 font-black tracking-widest">Sprints</span>
             </nav>

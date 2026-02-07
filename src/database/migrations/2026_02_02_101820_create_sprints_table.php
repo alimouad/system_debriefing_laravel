@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('sprints', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->string('description');
-            $table->string('duration');
+            $table->string('start_date');
+            $table->string('end_date');
+            $table->foreignId('classroom_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
