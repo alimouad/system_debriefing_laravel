@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreignId('skill_id')->constrained()->onDelete('cascade');
         });
 
-        Schema::create('skill_evaluation', function (Blueprint $table) {
+        Schema::create('evaluation_skill', function (Blueprint $table) {
             $table->foreignId('skill_id')->constrained()->onDelete('cascade');
             $table->foreignId('evaluation_id')->constrained()->onDelete('cascade');
         });

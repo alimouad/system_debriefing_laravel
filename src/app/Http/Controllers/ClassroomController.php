@@ -5,21 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Classroom;
 use App\Models\User;
+
 class ClassroomController extends Controller
 {
- 
+
     public function index()
     {
         $classrooms = Classroom::all();
-        return view('pages.admin.classrooms.index',compact('classrooms'));
-        
+        return view('pages.admin.classrooms.index', compact('classrooms'));
     }
     public function create()
     {
         return view('pages.admin.classrooms.create');
     }
 
-    public function store(Request $request , Classroom $classroom)
+    public function store(Request $request, Classroom $classroom)
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
@@ -50,7 +50,7 @@ class ClassroomController extends Controller
         $teachers = User::where('role', 'TEACHER')->get();
         return view('pages.admin.classrooms.assignTeacher', compact('classroom', 'teachers'));
     }
-    
+
     public function asignTeacherStore(Request $request, Classroom $classroom)
     {
         $data = $request->validate([
@@ -64,5 +64,16 @@ class ClassroomController extends Controller
         return redirect()
             ->route('admin.classrooms.index')
             ->with('success', 'Teacher assigned to classroom successfully!');
+    }
+    public function teacherClassroom()
+    {
+        $class = auth()->user()
+            ->classrooms()
+            ->with('students')
+            ->get();
+
+        $students = $class->flatMap->students;
+
+        return view('pages.teacher.classroom.index', compact('class', 'students'));
     }
 }

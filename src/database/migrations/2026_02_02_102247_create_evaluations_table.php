@@ -13,11 +13,23 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
-
             $table->text('comment')->nullable();
-            $table->foreignId('teacher_id')->constrained('users')->onDelete('set null');
-            $table->foreignId('student_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('brief_id')->constrained('briefs')->onDelete('cascade');
+
+            $table->foreignId('teacher_id')
+                ->nullable()
+                ->constrained('users')
+                ->nullOnDelete();
+
+            $table->foreignId('student_id')
+                ->constrained('users')
+                ->cascadeOnDelete();
+
+            $table->foreignId('brief_id')
+                ->constrained('briefs')
+                ->cascadeOnDelete();
+
+            $table->string('mastery_level')->nullable();
+
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('submissions', function (Blueprint $table) {
             $table->id();
             $table->text('description');
-            $table->text(' repository_url');
+            $table->text('repository_url');
             $table->foreignId('student_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('brief_id')->constrained('briefs')->onDelete('cascade');
             $table->timestamps();

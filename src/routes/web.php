@@ -11,6 +11,8 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\BriefController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubmittionController;
+use App\Http\Controllers\EvaluationController;
+use App\Models\Evaluation;
 use App\Models\User;
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -31,8 +33,11 @@ Route::middleware(['auth', 'role:ADMIN'])->prefix('/admin')->name('admin.')->gro
 
 Route::middleware(['auth', 'role:TEACHER'])->prefix('/teacher')->name('teacher.')->group(function () {
     Route::get('/home', [TeacherController::class, 'index'])->name('home');
-    // Route::resource('classrooms', ClassroomController::class);
+    Route::get('/classroom', [ClassroomController::class, 'teacherClassroom'])->name('classroom');
     Route::resource('briefs', BriefController::class);
+    Route::get('/briefs/{brief}/submissions', [EvaluationController::class, 'index'])->name('evaluation.index');
+    Route::get('/briefs/evaluate/{brief}/{student}', [EvaluationController::class, 'evaluate'])->name('evaluation.evaluate');
+    Route::post('/briefs/evaluate/{brief}/{student}', [EvaluationController::class, 'storeEvaluation'])->name('evaluation.store');
 });
 
 
@@ -44,4 +49,5 @@ Route::middleware(['auth', 'role:STUDENT'])->prefix('/student')->name('student.'
     Route::get('/briefs', [StudentController::class, 'briefs'])->name('briefs');
     Route::get('/briefs/{brief}/rendu', [SubmittionController::class, 'briefRendu'])->name('briefs.rendu');
     Route::post('/briefs/{brief}/submit', [SubmittionController::class, 'submitBrief'])->name('briefs.submit');
+    Route::get('/evaluations', [EvaluationController::class, 'getEvaluations'])->name('evaluations');
 });

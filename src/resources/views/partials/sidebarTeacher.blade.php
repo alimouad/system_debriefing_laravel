@@ -27,14 +27,14 @@
           </a>
 
           {{-- Classroom Link --}}
-          <a href="/teacher/classrooms"
+          <a href="{{route('teacher.classroom')}}"
               class="flex items-center justify-between group p-4 rounded-[1.5rem] transition-all duration-300 
        {{ str_contains($currentPath, '/teacher/classroom') ? 'bg-indigo-50 text-indigo-600 shadow-sm' : 'text-slate-400 hover:text-indigo-600 hover:bg-slate-50' }}">
               <div class="flex items-center gap-4">
                   <i data-lucide="users" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
                   <span class="font-bold text-sm tracking-tight">Classroom</span>
               </div>
-              @if(str_contains($currentPath, '/teacher/classrooms'))
+              @if(str_contains($currentPath, '/teacher/classroom'))
               <div class="w-1.5 h-1.5 rounded-full bg-indigo-600"></div>
               @endif
           </a>
@@ -64,7 +64,7 @@
                   <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Faculty Member</p>
               </div>
               <form action="{{ route('logout') }}" method="post">
-                    @csrf
+                  @csrf
                   <button type="submit" class="text-slate-300 hover:text-rose-500 transition-colors">
                       <span class="material-symbols-outlined text-xl">logout</span>
                   </button>

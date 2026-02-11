@@ -33,6 +33,6 @@ class SubmittionController extends Controller
 
         return redirect()
             ->route('student.briefs')
-            ->with('success', 'Brief submitted successfully!');
+            ->with('success', 'Submission submitted successfully!');
     }
 }

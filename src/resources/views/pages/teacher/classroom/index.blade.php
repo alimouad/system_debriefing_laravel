@@ -16,7 +16,7 @@
                 </span>
                 <h1 class="text-3xl font-black text-slate-900 mt-4 tracking-tight">
                     {{ $item['name'] }}
-                    <span class="text-indigo-600">({{ $item['year'] }})</span>
+                    <span class="text-indigo-600">({{ $item['promotion_year'] }})</span>
                 </h1>
                 <p class="text-slate-400 font-medium mt-2">
                     Managing your student roster and academic progress for this group.
@@ -33,7 +33,7 @@
             <div class="flex gap-4">
                 <div class="px-8 py-6 bg-slate-50 rounded-[2rem] border border-slate-100 text-center">
                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Total Students</p>
-                    <span class="text-2xl font-black text-slate-800">{{ count($studens) }}</span>
+                    <span class="text-2xl font-black text-slate-800">{{ count($students) }}</span>
                 </div>
                 <div class="px-8 py-6 bg-indigo-600 rounded-[2rem] shadow-xl shadow-indigo-200 text-center">
                     <p class="text-[10px] font-black text-white/60 uppercase tracking-widest mb-1">Status</p>
@@ -67,7 +67,7 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-50">
-                    @forelse($studens as $student)
+                    @forelse($students as $student)
                     <tr class="group hover:bg-indigo-50/20 transition-all duration-300">
                         <td class="px-10 py-6">
                             <div class="flex items-center gap-4">

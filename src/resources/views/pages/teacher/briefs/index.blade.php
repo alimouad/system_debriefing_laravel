@@ -67,7 +67,7 @@
 
             {{-- Actions --}}
             <div class="flex items-center gap-3">
-                <a href="/teacher/briefs/evaluate?id={{ $brief['id'] }}" class="px-6 py-4 bg-slate-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-indigo-600 transition-colors shadow-lg shadow-slate-200">
+                <a href="{{ route('teacher.evaluation.index', $brief) }}" class="px-6 py-4 bg-slate-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-indigo-600 transition-colors shadow-lg shadow-slate-200">
                     Evaluate Students
                 </a>
                 <div class="flex flex-col gap-2">

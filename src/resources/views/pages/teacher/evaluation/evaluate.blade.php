@@ -8,8 +8,8 @@
     {{-- Header: Student & Brief Context --}}
     <header class="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div class="flex items-center gap-6">
-            <a href="/teacher/evaluations" class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-400 hover:text-indigo-600 transition-all">
-                <span class="material-symbols-outlined">arrow_back</span>
+
+            <span class="material-symbols-outlined">arrow_back</span>
             </a>
             <div>
                 <nav class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-indigo-400 mb-1">
@@ -18,14 +18,14 @@
                     <span class="text-slate-900">Grading Session</span>
                 </nav>
                 <h1 class="text-3xl font-black text-slate-900 tracking-tight">
-                    Evaluating <span class="text-indigo-600">{{ $student['first_name'] }} {{ $student['last_name'] }}</span>
+                    Evaluating <span class="text-indigo-600">{{ $submission->student->first_name }} {{ $submission->student->last_name }}</span>
                 </h1>
             </div>
         </div>
     </header>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-        
+
         {{-- Left: Student Submission Review --}}
         <div class="lg:col-span-4 space-y-6">
             <section class="bg-white rounded-[3rem] p-8 border border-slate-100 shadow-sm sticky top-10">
@@ -55,11 +55,14 @@
 
         {{-- Right: Evaluation Form --}}
         <div class="lg:col-span-8">
-            <form action="" method="POST" class="space-y-8">
+            <form action="{{ route('teacher.evaluation.store', ['brief' => $submission->brief_id,'student' => $submission->student->id]) }}"
+                method="POST"
+                class="space-y-8">
+                @csrf
                 {{-- Hidden context for the database --}}
-                <input type="hidden" name="student_id" value="{{ $student['id'] }}">
-                <input type="hidden" name="brief_id" value="{{ $brief['id'] }}">
-                <input type="hidden" name="teacher_id" value="{{ $_SESSION['user_id'] }}">
+                <input type="hidden" name="student_id" value="{{ $submission->student->id }}">
+                <input type="hidden" name="brief_id" value="{{ $submission->brief_id }}">
+                <input type="hidden" name="teacher_id" value="{{ auth()->user()->id }}">
 
                 <div class="space-y-6">
                     @foreach($skills as $index => $skill)
@@ -89,7 +92,7 @@
                         </div>
 
                         {{-- Individual Skill Comment --}}
-                        <textarea name="evaluations[{{ $skill['id'] }}][comment]" rows="2" 
+                        <textarea name="evaluations[{{ $skill['id'] }}][comment]" rows="2"
                             placeholder="Add a specific comment for this skill..."
                             class="w-full px-6 py-4 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-indigo-100 outline-none transition-all text-xs font-medium"></textarea>
                     </section>

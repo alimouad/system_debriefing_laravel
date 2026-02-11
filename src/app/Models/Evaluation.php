@@ -11,8 +11,6 @@ class Evaluation extends Model
         'teacher_id',
         'student_id',
         'brief_id',
-        'sprint_id',
-        'skill_id',
         'mastery_level'
     ];
 
