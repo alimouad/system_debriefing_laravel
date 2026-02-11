@@ -4,9 +4,17 @@
 
 @section('content')
 <div class="max-w-full mx-auto space-y-10 animate-in fade-in zoom-in-95 duration-700">
-
+    @if ($errors->any())
+    <div>
+        @foreach ($errors->all() as $error)
+        <p style="color:red">{{ $error }}</p>
+        @endforeach
+    </div>
+    @endif
+    
+    @include('partials.flashMessage')
     <header class="flex items-center gap-6">
-        <a href="/teacher/briefs" class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-400 hover:text-indigo-600 transition-all">
+        <a href="{{ route('teacher.briefs.index') }}" class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-400 hover:text-indigo-600 transition-all">
             <span class="material-symbols-outlined">arrow_back</span>
         </a>
         <div>
@@ -15,8 +23,9 @@
         </div>
     </header>
 
-    <form action="" method="POST" class="grid grid-cols-1 lg:grid-cols-12 gap-10" novalidate>
+    <form action="{{ route('teacher.briefs.store') }}" method="POST" class="grid grid-cols-1 lg:grid-cols-12 gap-10" novalidate>
 
+        @csrf
         {{-- Left: Main Details --}}
         <div class="lg:col-span-8 space-y-8">
             <section class="bg-white rounded-[3rem] p-10 shadow-sm border border-slate-100 space-y-8">

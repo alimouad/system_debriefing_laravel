@@ -23,7 +23,7 @@
                 <i data-lucide="layout-dashboard" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
                 <span class="font-bold text-sm tracking-tight">Dashboard</span>
             </div>
-            @if(str_contains($currentPath, '/admin/dashboard'))
+            @if(str_contains($currentPath, '/admin/home'))
             <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
             @endif
         </a>
@@ -42,14 +42,14 @@
         </a>
 
         {{-- Classrooms --}}
-        <a href="/admin/classroom"
+        <a href="/admin/classrooms"
             class="flex items-center justify-between group p-4 rounded-[1.5rem] transition-all duration-300 
        {{ str_contains($currentPath, '/admin/classroom') ? 'pink-gradient text-white shadow-xl shadow-pink-500/20' : 'text-slate-400 hover:text-pink-500 hover:bg-pink-50/50' }}">
             <div class="flex items-center gap-4">
                 <i data-lucide="book-open" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
                 <span class="font-bold text-sm tracking-tight">Classrooms</span>
             </div>
-            @if(str_contains($currentPath, '/admin/classroom'))
+            @if(str_contains($currentPath, '/admin/classrooms'))
             <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
             @endif
         </a>
@@ -92,11 +92,18 @@
             </div>
         </div>
 
-        <a href="/logout" class="flex items-center gap-4 p-4 rounded-[1.5rem] text-rose-400 hover:bg-rose-50 transition-all group">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center group-hover:bg-rose-100 transition-colors">
-                <i data-lucide="log-out" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
-            </div>
-            <span class="font-bold text-sm">Logout</span>
+
+        <form method="POST" action="{{ route('logout') }}" class="ml-2 flex items-center gap-4 p-4 rounded-[1.5rem] text-rose-400 hover:bg-rose-50 transition-all group">
+            @csrf
+            <button type="submit" class="flex items-center gap-4 p-4 rounded-[1.5rem] text-rose-400 hover:bg-rose-50 transition-all group">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center group-hover:bg-rose-100 transition-colors">
+                    <i data-lucide="log-out" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+                </div>
+                <span class="font-bold text-sm">Logout</span>
+            </button>
+        </form>
+
+
         </a>
     </div>
 </aside>

@@ -77,16 +77,16 @@
                         <td class="px-8 py-6">
                             <div class="flex flex-col">
                                 <span class="text-xs font-bold text-slate-600">
-                                    {{ $item['submitted_at'] ? date('M d, Y', strtotime($item['submitted_at'])) : '---' }}
+                                    {{ $item['created_at'] ? date('M d, Y', strtotime($item['created_at'])) : '---' }}
                                 </span>
-                                <span class="text-[9px] font-black text-slate-400 uppercase">{{ $item['submitted_at'] ? date('H:i', strtotime($item['submitted_at'])) : '' }}</span>
+                                <span class="text-[9px] font-black text-slate-400 uppercase">{{ $item['created_at'] ? date('H:i', strtotime($item['created_at'])) : '' }}</span>
                             </div>
                         </td>
 
                         {{-- Action --}}
                         <td class="px-8 py-6 text-center">
                             {{-- Use '?' for the first param and '&' for the second --}}
-                            <a href="/teacher/evaluate?brief_id={{ $item['brief_id'] }}&student_id={{ $item['student_id'] }}"
+                            <a href="{{ route('teacher.evaluation.evaluate', ['brief' => $item['brief_id'], 'student' => $item['student_id']]) }}"
                                 class="px-6 py-3 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest rounded-2xl hover:bg-indigo-600 hover:shadow-lg hover:shadow-indigo-200 transition-all active:scale-95">
                                 Evaluate
                             </a>

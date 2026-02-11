@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->string('estimatedDuration');
-            $table->enum('type',['INDIVIDUAL','COLLECTIVE']);
+            $table->string('estimated_duration');
+            $table->foreignId('teacher_id')->constrained('users')->onDelete('set null');
+            $table->foreignId('sprint_id')->constrained('sprints')->onDelete('cascade');
+            $table->enum('brief_type',['INDIVIDUAL','COLLECTIVE']);
             $table->timestamps();
         });
     }

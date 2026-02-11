@@ -10,7 +10,7 @@
     {{-- Header Section --}}
     <header class="flex flex-col md:flex-row md:items-center justify-between gap-6 px-4">
         <div class="flex items-center gap-8">
-            <a href="/admin/sprints" class="group w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-slate-400 hover:text-primary transition-all border border-slate-100 hover:shadow-xl hover:-translate-y-1">
+            <a href="{{ route('admin.sprints.index') }}" class="group w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-slate-400 hover:text-primary transition-all border border-slate-100 hover:shadow-xl hover:-translate-y-1">
                 <span class="material-symbols-outlined text-4xl group-hover:-translate-x-1 transition-transform">arrow_back</span>
             </a>
             <div>
@@ -25,8 +25,8 @@
         {{-- Main Form Section --}}
         <div class="lg:col-span-8">
             <section class="bg-white/80 backdrop-blur-3xl rounded-[4rem] p-12 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.04)] border border-white ring-1 ring-black/[0.01]">
-                <form action="" method="POST" class="space-y-10" novalidate>
-                    
+                <form action="{{ route('admin.sprints.store') }}" method="POST" class="space-y-10" novalidate>
+                    @csrf
                     <div class="space-y-8">
                         <div class="flex items-center gap-3 ml-4">
                             <span class="w-1.5 h-6 pink-gradient rounded-full"></span>
@@ -41,7 +41,7 @@
                                     class="w-full px-8 py-6 bg-slate-100/50 border-2 border-transparent rounded-[2.2rem] text-slate-700 placeholder-slate-400
                                            focus:bg-white focus:ring-8 focus:ring-pink-100/50 focus:border-pink-200 outline-none transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] text-sm font-bold">
                             </div>
-                        </div>
+                        </div>  
 
                         <div class="space-y-4">
                             <label class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] ml-6">Strategic Description</label>

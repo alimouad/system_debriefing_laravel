@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="LaravelPint">
-    <laravel_pint_settings>
-      <LaravelPintConfiguration tool_path="$PROJECT_DIR$/src/vendor/bin/pint" />
-    </laravel_pint_settings>
+  <component name="ChangeListManager">
+    <list default="true" id="1a1b1af7-b13c-4957-b295-5e64d29c09cd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/docker" beforeDir="false" afterPath="$PROJECT_DIR$/docker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/ClassroomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/ClassroomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/SubmittionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/SubmittionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Evaluation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Evaluation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2026_02_02_102247_create_evaluations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2026_02_02_102247_create_evaluations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2026_02_02_114225_create_submittions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2026_02_02_114225_create_submittions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2026_02_03_114242_create_pivot_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2026_02_03_114242_create_pivot_tables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/pages/student/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/pages/student/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/pages/teacher/briefs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/pages/teacher/briefs/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/pages/teacher/classRoom/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/pages/teacher/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/pages/teacher/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/pages/teacher/evaluation/evaluationForm.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/pages/teacher/evaluation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/pages/teacher/evaluation/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/partials/sideBarStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/partials/sideBarStudent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/partials/sidebarTeacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/partials/sidebarTeacher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="MessDetectorOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/src/composer.json</pharConfigPath>
+    <execution />
   </component>
-  <component name="PHPCSFixerOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PHPCodeSnifferOptionsConfiguration">
-    <option name="highlightLevel" value="WARNING" />
-    <option name="transferred" value="true" />
-  </component>
-  <component name="PhpIncludePathManager">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/bin/php">
     <include_path>
       <path value="$PROJECT_DIR$/src/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/src/vendor/psy/psysh" />
@@ -131,16 +150,60 @@
       <path value="$PROJECT_DIR$/src/vendor/theseer/tokenizer" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
-  <component name="PhpStanOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="39SArcnpDd4fl4s2qPIUOFliqGL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PhpUnit">
-    <phpunit_settings>
-      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/src/phpunit.xml" custom_loader_path="$PROJECT_DIR$/src/vendor/autoload.php" use_configuration_file="true" />
-    </phpunit_settings>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "dev",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/src/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
   </component>
-  <component name="PsalmOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PS-253.30387.85" />
+        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.30387.85" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a1b1af7-b13c-4957-b295-5e64d29c09cd" name="Changes" comment="" />
+      <created>1770679299667</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770679299667</updated>
+      <workItem from="1770679302508" duration="3960000" />
+      <workItem from="1770796848269" duration="7293000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:tailwindcss" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:vite" />
   </component>
 </project>

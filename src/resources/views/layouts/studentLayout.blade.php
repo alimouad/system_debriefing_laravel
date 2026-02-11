@@ -45,7 +45,7 @@
             <header class="sticky top-0 z-40 glass border-b border-emerald-100/50 px-12 py-6 flex items-center justify-between">
                 <div class="flex items-center gap-4">
                     <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Active Sprint: {{ $_SESSION['sprint_title'] ?? 'Global Cycle' }}</span>
+                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Active Sprint: Global Cycle </span>
                 </div>
                 
                 <div class="flex items-center gap-6">
@@ -57,11 +57,11 @@
                     
                     <div class="flex items-center gap-3 pl-4 border-l border-slate-100">
                         <div class="text-right hidden sm:block">
-                            <p class="text-xs font-black text-slate-800">{{ $_SESSION['user_name'] }}</p>
+                            <p class="text-xs font-black text-slate-800">{{ auth()->user()->first_name }}</p>
                             <p class="text-[9px] font-bold text-emerald-500 uppercase tracking-widest">Student</p>
                         </div>
                         <div class="w-11 h-11 rounded-2xl bg-emerald-100 border-2 border-white shadow-sm flex items-center justify-center text-emerald-700 font-black">
-                            {{ substr($_SESSION['user_name'], 0, 1) }}
+                            {{ substr(auth()->user()->first_name, 0, 1) }}
                         </div>
                     </div>
                 </div>

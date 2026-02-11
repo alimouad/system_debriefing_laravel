@@ -25,8 +25,8 @@
         
         {{-- Form Section --}}
         <section class="lg:col-span-8 bg-white/80 backdrop-blur-3xl rounded-[3.5rem] p-12 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.04)] border border-white ring-1 ring-black/[0.01]">
-            <form action="" method="POST" class="space-y-10">
-                
+            <form action="{{ route('admin.skills.store') }}" method="POST" class="space-y-10">
+                @csrf
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
                     {{-- Code Field (Maps to 'code' column) --}}
                     <div class="md:col-span-4 space-y-4">

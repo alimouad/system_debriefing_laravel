@@ -24,8 +24,8 @@
         
         {{-- Form Section --}}
         <section class="lg:col-span-8 bg-white/80 backdrop-blur-3xl rounded-[3.5rem] p-12 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.04)] border border-white ring-1 ring-black/[0.01]">
-            <form action="" method="POST" class="space-y-10">
-                
+            <form action="{{ route('admin.classrooms.store') }}" method="POST" class="space-y-10">
+                @csrf
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="space-y-4">
                         <label class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] ml-6 block">Classroom Name</label>
@@ -39,8 +39,8 @@
                     <div class="space-y-4">
                         <label class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] ml-6 block">Academic Year</label>
                         <div class="relative group">
-                            <input type="text" name="year" placeholder="e.g. 2025/2026" required
-                                value="{{ $data['year'] ?? '' }}"
+                            <input type="text" name="promotion_year" placeholder="e.g. 2025/2026" required
+                                value="{{ $data['promotion_year'] ?? '' }}"
                                 class="w-full px-8 py-6 bg-slate-100/50 border-2 border-transparent rounded-[2.2rem] text-slate-700 placeholder-slate-400 focus:bg-white focus:ring-8 focus:ring-pink-100/50 focus:border-pink-200 outline-none transition-all duration-500 shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)]">
                         </div>
                     </div>

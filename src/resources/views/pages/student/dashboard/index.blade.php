@@ -9,17 +9,17 @@
     <header class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 px-2">
         <div>
             <h1 class="text-4xl font-black text-slate-900 tracking-tight">
-                Hello, <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">{{ explode(' ', $_SESSION['user_name'])[0] }}</span> 👋
+                Hello, <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">{{ auth()->user()->first_name }}</span> 👋
             </h1>
             <p class="text-slate-400 font-medium mt-2">
-                You are currently in <span class="text-emerald-600 font-bold">{{ $student['classroom_name'] }}</span>.
+                You are currently in <span class="text-emerald-600 font-bold">{{auth()->user()->classroom->name ?? 'No Classroom Assigned' }}</span>.
             </p>
         </div>
 
         <div class="flex items-center gap-4 bg-white p-2 rounded-[2rem] shadow-sm border border-slate-100">
             <div class="px-6 py-3 bg-emerald-50 rounded-[1.5rem] border border-emerald-100">
                 <p class="text-[9px] font-black text-emerald-600 uppercase tracking-widest leading-tight">Academic Year</p>
-                <p class="text-sm font-bold text-slate-700">{{ $student['year'] }}</p>
+                <p class="text-sm font-bold text-slate-700">{{ auth()->user()->classroom->promotion_year ?? 'N/A' }}</p>
             </div>
         </div>
     </header>
@@ -37,6 +37,7 @@
                         <span class="text-xs font-bold text-emerald-500">Mastered</span>
                     </div>
                 </div>
+
 
                 <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Projects Done</p>
@@ -69,7 +70,8 @@
 
                         {{-- Timeline Connector: Fixed using $index and $totalNews --}}
                         @if($index < ($totalNews - 1))
-                            <div class="absolute left-6 top-12 bottom-[-2rem] w-[2px] bg-slate-50">
+            
+            +            <div class="absolute left-6 top-12 bottom-[-2rem] w-[2px] bg-slate-50">
                     </div>
                     @endif
 
@@ -108,37 +110,37 @@
     </div>
 
     {{-- Right: Skill Mastery (Keep this as it's the core identity) --}}
-    <aside class="lg:col-span-4">
-        <section class="bg-slate-900 rounded-[3rem] p-8 text-white shadow-2xl relative overflow-hidden h-full">
-            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl"></div>
+        <aside class="lg:col-span-4">
+            <section class="bg-slate-900 rounded-[3rem] p-8 text-white shadow-2xl relative overflow-hidden h-full">
+                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl"></div>
 
-            <h3 class="text-xl font-black mb-8 flex items-center gap-3 relative z-10">
-                <span class="material-symbols-outlined text-emerald-400">military_tech</span>
-                Competency Map
-            </h3>
+                <h3 class="text-xl font-black mb-8 flex items-center gap-3 relative z-10">
+                    <span class="material-symbols-outlined text-emerald-400">military_tech</span>
+                    Competency Map
+                </h3>
 
-            <div class="space-y-8 relative z-10">
-                @forelse(($student['skills'] ?? []) as $skill)
-                <div class="group">
-                    <div class="flex justify-between items-end mb-3">
-                        <div>
-                            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-500">{{ $skill['code'] }}</p>
-                            <p class="text-sm font-bold text-slate-200 group-hover:text-white transition-colors">{{ $skill['label'] }}</p>
+                <div class="space-y-8 relative z-10">
+                    @forelse(($student['skills'] ?? []) as $skill)
+                    <div class="group">
+                        <div class="flex justify-between items-end mb-3">
+                            <div>
+                                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-500">{{ $skill['code'] }}</p>
+                                <p class="text-sm font-bold text-slate-200 group-hover:text-white transition-colors">{{ $skill['label'] }}</p>
+                            </div>
                         </div>
+                        <div class="flex gap-1.5">
+                            @for($i=1; $i<=3; $i++)
+                                <div class="h-1.5 flex-1 rounded-full {{ $i <= 2 ? 'bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.4)]' : 'bg-white/10' }}">
+                        </div>
+                        @endfor
                     </div>
-                    <div class="flex gap-1.5">
-                        @for($i=1; $i<=3; $i++)
-                            <div class="h-1.5 flex-1 rounded-full {{ $i <= 2 ? 'bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.4)]' : 'bg-white/10' }}">
-                    </div>
-                    @endfor
                 </div>
-            </div>
-            @empty
-            <p class="text-slate-500 text-xs italic">Skills will appear here once evaluated.</p>
-            @endforelse
-</div>
-</section>
-</aside>
-</div>
+                @empty
+                <p class="text-slate-500 text-xs italic">Skills will appear here once evaluated.</p>
+                @endforelse
+        </div>
+        </section>
+        </aside>
+    </div>
 </div>
 @endsection

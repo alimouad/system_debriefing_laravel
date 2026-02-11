@@ -27,7 +27,7 @@
           </a>
 
           {{-- Classroom Link --}}
-          <a href="/teacher/classroom"
+          <a href="{{route('teacher.classroom')}}"
               class="flex items-center justify-between group p-4 rounded-[1.5rem] transition-all duration-300 
        {{ str_contains($currentPath, '/teacher/classroom') ? 'bg-indigo-50 text-indigo-600 shadow-sm' : 'text-slate-400 hover:text-indigo-600 hover:bg-slate-50' }}">
               <div class="flex items-center gap-4">
@@ -63,9 +63,12 @@
                   <p class="text-xs font-black truncate">{{ $_SESSION['user_name'] ?? 'Instructor' }}</p>
                   <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Faculty Member</p>
               </div>
-              <a href="/logout" class="text-slate-300 hover:text-rose-500 transition-colors">
-                  <span class="material-symbols-outlined text-xl">logout</span>
-              </a>
+              <form action="{{ route('logout') }}" method="post">
+                  @csrf
+                  <button type="submit" class="text-slate-300 hover:text-rose-500 transition-colors">
+                      <span class="material-symbols-outlined text-xl">logout</span>
+                  </button>
+              </form>
           </div>
       </div>
   </aside>
