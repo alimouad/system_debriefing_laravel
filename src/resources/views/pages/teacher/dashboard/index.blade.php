@@ -91,10 +91,10 @@
 
             {{-- Call to Action --}}
             <div class="mt-auto pt-8">
-                <button class="w-fit p-5 bg-slate-900 text-white rounded-[2rem] font-black text-[10px] uppercase tracking-widest shadow-xl shadow-slate-200 hover:bg-indigo-600 transition-all flex items-center justify-center gap-3 group">
+                <a href="{{ route('teacher.briefs.index') }}" class="w-fit p-5 bg-slate-900 text-white rounded-[2rem] font-black text-[10px] uppercase tracking-widest shadow-xl shadow-slate-200 hover:bg-indigo-600 transition-all flex items-center justify-center gap-3 group">
                     Review All Submissions
                     <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </button>
+                </a>
             </div>
         </section>
     </aside>

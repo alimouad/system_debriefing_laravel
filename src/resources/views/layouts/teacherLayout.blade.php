@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Portal | @yield('title', 'Dashboard')</title>
-    
+
     {{-- Core Assets --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+
     <script>
         tailwind.config = {
             theme: {
@@ -20,7 +24,7 @@
             }
         }
     </script>
-    
+
     <style>
         .pink-gradient { background: linear-gradient(90deg, #ff6b8b 0%, #ff4f7a 100%); }
         .indigo-gradient { background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%); }
@@ -31,18 +35,18 @@
 </head>
 
 <body class="bg-[#f8fafc] font-sans h-screen overflow-hidden text-slate-900">
-    
+
     <div class="flex h-full w-full">
-        
+
         {{-- Teacher Sidebar --}}
-        @include ('partials.sidebarTeacher') 
+        @include ('partials.sidebarTeacher')
         {{-- Main Content Area --}}
         <main class="flex-1 h-full overflow-y-auto relative scroll-smooth bg-slate-50/50">
             {{-- Top Navbar --}}
-        @include('partials.headerTeacher')   
+        @include('partials.headerTeacher')
  <main class=" flex-1 h-full overflow-y-auto relative scroll-smooth p-12">
 
-            @include('partials.flashMessage') 
+            @include('partials.flashMessage')
 
             <div class="max-w-full mx-auto">
                 @yield('content')

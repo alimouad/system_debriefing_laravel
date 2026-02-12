@@ -4,15 +4,6 @@
 
 @section('content')
 <div class="max-w-full mx-auto space-y-10 animate-in fade-in zoom-in-95 duration-700">
-    @if ($errors->any())
-    <div>
-        @foreach ($errors->all() as $error)
-        <p style="color:red">{{ $error }}</p>
-        @endforeach
-    </div>
-    @endif
-    
-    @include('partials.flashMessage')
     <header class="flex items-center gap-6">
         <a href="{{ route('teacher.briefs.index') }}" class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-400 hover:text-indigo-600 transition-all">
             <span class="material-symbols-outlined">arrow_back</span>
